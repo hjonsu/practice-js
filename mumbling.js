@@ -1,16 +1,18 @@
-// This time no story, no theory. The examples below show you how to write function accum:
+/*
+This time no story, no theory. The examples below show you how to write function accum:
 
-// Examples:
-// accum("abcd") -> "A-Bb-Ccc-Dddd"
-// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-// accum("cwAt") -> "C-Ww-Aaa-Tttt"
-// The parameter of accum is a string which includes only letters from a..z and A..Z.
+Examples:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+The parameter of accum is a string which includes only letters from a..z and A..Z.
 
-// First letter always capitalized
-// Each index seperated by -
-// The number of each letter corresponds to its index
-// Arg is a string
-// Return is a string
+First letter always capitalized
+Each index seperated by -
+The number of each letter corresponds to its index
+Arg is a string
+Return is a string
+*/
 
 // Solution 1
 
