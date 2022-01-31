@@ -118,4 +118,4 @@ array = [
 ];
 console.log(snail(array));
 
-// 1234,5678,9123,4567
+// WIP

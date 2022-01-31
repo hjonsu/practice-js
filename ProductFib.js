@@ -40,3 +40,5 @@ productFib(800) # should return {34, 55, 0},
 productFib(714) # should return {21, 34, true},
 productFib(800) # should return {34, 55, false},
 */
+
+// WIP
