@@ -1,8 +1,11 @@
+// https://leetcode.com/problems/word-search/submissions/1123490625
+
 /**
  * @param {character[][]} board
  * @param {string} word
  * @return {boolean}
  */
+
 var exist = function (board, word) {
   if (board.length <= 0 || word.length <= 0) {
     return false;
