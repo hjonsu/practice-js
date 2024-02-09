@@ -687,13 +687,35 @@ const exampleOutput = {
 
 const solutionAlg = (data) => {
   let temp = {};
+  let duplicate_spam_scores = [];
+  let duplicate_domain_authorities = [];
   const sources = data.idina_response.sources;
-  console.log(sources);
-  for (const item in sources) {
-    if (!temp[sources[item].spam_score]) {
-      temp[sources[item].spam_score] = temp[sources[item].spam_score];
+  for (const key in sources) {
+    if (!temp[sources[key].spam_score]) {
+      temp[sources[key].spam_score] = { urls: [] };
+    }
+    temp[sources[key].spam_score].urls.push(sources[key].url);
+    if (!temp[sources[key].domain_authority]) {
+      temp[sources[key].domain_authority] = { domains: [] };
+    }
+    temp[sources[key].domain_authority].domains.push(sources[key].url);
+  }
+  for (const key in temp) {
+    if (temp[key].urls && temp[key].urls.length > 1) {
+      duplicate_spam_scores = [...duplicate_spam_scores, ...temp[key].urls];
+    }
+    if (temp[key].domains && temp[key].domains.length > 1) {
+      duplicate_domain_authorities = [
+        ...duplicate_domain_authorities,
+        ...temp[key].domains,
+      ];
     }
   }
+  const ans = {
+    duplicate_spam_scores,
+    duplicate_domain_authorities,
+  };
+  return ans;
 };
 
 solutionAlg(data);
